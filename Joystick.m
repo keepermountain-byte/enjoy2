@@ -75,7 +75,7 @@
         } else if(usage == 0x39) {
 			action = [[JSActionHat alloc] init];
         } else {
-			if(usage >= 0x30 && usage < 0x36) {
+			if ((usage >= 0x30 && usage < 0x36) || (usage == 196 || usage == 197)) {
 				action = [[JSActionAnalog alloc] initWithIndex: axes++];
 				[(JSActionAnalog*)action setMax: (double)max];
                 [(JSActionAnalog*)action setMin: (double)min];
